@@ -1,4 +1,5 @@
 ## TLDR
+
 [automatic installation script](https://dm.idkjs.vercel.app/install):
 
 ```bash
