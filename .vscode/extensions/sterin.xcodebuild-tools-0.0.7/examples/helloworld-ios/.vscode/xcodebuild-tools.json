@@ -1,0 +1,19 @@
+{
+    "variables": {
+        "SDK_VERSION": "12.1"
+    },
+    "sdk": "iphonesimulator${SDK_VERSION}",
+    "workspace": "${workspaceRoot}/helloworld-ios.xcworkspace",
+    "scheme": "build",
+    "debugConfigurations": [
+        {
+            "name": "Simulator",
+            "cwd": "${buildPath}",
+            "program": "/usr/local/bin/ios-sim",
+            "args": [
+                "launch", "project.app/",
+                "--devicetypeid",  "com.apple.CoreSimulator.SimDeviceType.iPhone-7, ${SDK_VERSION}"
+            ]
+        }        
+    ]
+}

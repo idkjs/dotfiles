@@ -1,0 +1,9 @@
+src/sexp.ml
+node_modules/
+out/
+_esy/
+lib/
+dist/
+esy.lock/
+.vscode-test/
+_opam

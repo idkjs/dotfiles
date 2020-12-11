@@ -1,0 +1,48 @@
+{
+	"name": "chmod-command",
+	"displayName": "chmod Command",
+	"description": "Add commands to chmod current file",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.35.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.chmod"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.chmod",
+				"title": "chmod"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "yarn run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"tslint": "^5.12.1",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	},
+	"publisher": "labocho",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/labocho/vscode-chmod.git"
+	},
+	"__metadata": {
+		"id": "008f56f7-896c-4fed-bf26-d6ed7fceb4da",
+		"publisherId": "23d01eff-8787-4e8c-92f7-a096c1592b42",
+		"publisherDisplayName": "labocho"
+	}
+}

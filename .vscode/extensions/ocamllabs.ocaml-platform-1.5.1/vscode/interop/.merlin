@@ -1,0 +1,13 @@
+EXCLUDE_QUERY_DIR
+B /home/runner/.opam/4.11.1/lib/bytes
+B /home/runner/.opam/4.11.1/lib/gen_js_api
+B /home/runner/.opam/4.11.1/lib/js_of_ocaml
+B /home/runner/.opam/4.11.1/lib/uchar
+B ../../_build/default/vscode/interop/.interop.objs/byte
+S /home/runner/.opam/4.11.1/lib/bytes
+S /home/runner/.opam/4.11.1/lib/gen_js_api
+S /home/runner/.opam/4.11.1/lib/js_of_ocaml
+S /home/runner/.opam/4.11.1/lib/uchar
+S .
+FLG -ppx '/home/runner/work/vscode-ocaml-platform/vscode-ocaml-platform/_build/default/.ppx/878efc8ece20bcbf2dd8c437a0746ae0/ppx.exe --as-ppx --cookie '\''library-name="interop"'\'''
+FLG -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs

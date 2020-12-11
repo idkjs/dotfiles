@@ -1,0 +1,62 @@
+{
+	"name": "vscode-styled-ppx",
+	"displayName": "vscode-styled-ppx",
+	"description": "Syntax highlighting for styled-ppx",
+	"version": "0.0.4",
+	"publisher": "davesnx",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/davesnx/styled-ppx.git"
+	},
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"scripts": {
+		"prepare": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test ./test"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "source.css.styled-ppx",
+				"aliases": [
+					"CSS (styled-ppx)"
+				],
+				"configuration": "./css.styled-ppx.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "source.css.styled-ppx",
+				"scopeName": "source.css.styled-ppx",
+				"path": "./syntaxes/css.styled-ppx.json"
+			},
+			{
+				"injectTo": [
+					"source.reason",
+					"source.re",
+					"source.ml",
+					"source.ocaml"
+				],
+				"scopeName": "source.styled-ppx",
+				"path": "./syntaxes/styled-ppx.json",
+				"embeddedLanguages": {
+					"source.css.scss": "css",
+					"meta.embedded.block.css": "css"
+				}
+			}
+		]
+	},
+	"devDependencies": {
+		"vscode": "^1.1.26"
+	},
+	"__metadata": {
+		"id": "368a45ee-1f4a-4893-bfec-1c4131dc8a9b",
+		"publisherId": "859dc624-f7f5-45f3-b9d9-1cb3d50d946e",
+		"publisherDisplayName": "David Sancho"
+	}
+}

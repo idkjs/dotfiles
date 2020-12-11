@@ -1,0 +1,78 @@
+{
+	"name": "yarn-update-deps",
+	"displayName": "Yarn update deps",
+	"description": "Interactive update dependencies",
+	"version": "0.3.1",
+	"license": "MIT",
+	"publisher": "vlazh",
+	"author": "Vladimir Zhukov",
+	"maintainers": [
+		{
+			"name": "Vladimir Zhukov",
+			"url": "http://github.com/vlazh"
+		}
+	],
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.update-deps"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"title": "Update deps",
+				"category": "Yarn",
+				"command": "extension.update-deps"
+			}
+		]
+	},
+	"icon": "yarn_icon.png",
+	"homepage": "https://github.com/vlazh/yarn-update-deps",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vlazh/yarn-update-deps"
+	},
+	"keywords": [
+		"yarn",
+		"update",
+		"upgrade",
+		"deps",
+		"dependencies"
+	],
+	"scripts": {
+		"clean": "rimraf out/*",
+		"vscode:prepublish": "yarn run clean && yarn run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "yarn run compile && yarn run lint",
+		"publish:major": "vsce publish major",
+		"publish:minor": "vsce publish minor",
+		"publish:patch": "vsce publish patch"
+	},
+	"devDependencies": {
+		"@types/node": "^13.11.1",
+		"@types/vscode": "^1.43.0",
+		"@typescript-eslint/eslint-plugin": "^2.27.0",
+		"@typescript-eslint/parser": "^2.27.0",
+		"@vzh/configs": "^3.47.0",
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb-base": "^14.1.0",
+		"eslint-config-prettier": "^6.10.1",
+		"eslint-plugin-import": "^2.20.2",
+		"eslint-plugin-prettier": "^3.1.2",
+		"prettier": "^2.0.4",
+		"rimraf": "^3.0.2",
+		"typescript": "^3.7.5"
+	},
+	"__metadata": {
+		"id": "61edc4d8-fe2f-4eb3-8892-79da12290757",
+		"publisherId": "a257dd7a-0199-4772-8adf-aafdc915e6b4",
+		"publisherDisplayName": "vlazh"
+	}
+}

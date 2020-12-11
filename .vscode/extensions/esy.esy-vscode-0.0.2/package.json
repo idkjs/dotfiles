@@ -1,0 +1,60 @@
+{
+	"name": "esy-vscode",
+	"displayName": "Esy",
+	"description": "Esy Projects support for VSCode",
+	"version": "0.0.2",
+	"publisher": "esy",
+	"keywords": [
+		"esy",
+		"ocaml",
+		"reason"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/esy/esy-vscode"
+	},
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "icon.png",
+	"contributes": {
+		"jsonValidation": [
+			{
+				"fileMatch": "esy.json",
+				"url": "./schemas/esySchema.json"
+			},
+			{
+				"fileMatch": "package.json",
+				"url": "./schemas/esySchema.json"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "mocha --ui tdd --require @babel/register schemas/test"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.4.3",
+		"@babel/polyfill": "^7.4.3",
+		"@babel/preset-env": "^7.4.3",
+		"@babel/register": "^7.4.0",
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^7.0.43",
+		"@types/request-promise": "^4.1.42",
+		"jsonschema": "^1.2.4",
+		"request-promise": "^4.2.4",
+		"should": "^13.2.3",
+		"tslint": "^5.8.0",
+		"typescript": "^2.6.1",
+		"vscode": "^1.1.6"
+	},
+	"__metadata": {
+		"id": "fe027b2c-4d83-4c64-856a-cb032ba4d6b7",
+		"publisherId": "9ca97054-58b3-4cc7-a8ba-ec167f95a0ee",
+		"publisherDisplayName": "esy"
+	}
+}

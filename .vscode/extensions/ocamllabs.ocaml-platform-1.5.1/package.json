@@ -1,0 +1,614 @@
+{
+	"name": "ocaml-platform",
+	"displayName": "OCaml Platform",
+	"description": "Official OCaml Support from OCamlLabs",
+	"license": "MIT",
+	"version": "1.5.1",
+	"publisher": "ocamllabs",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ocamllabs/vscode-ocaml-platform"
+	},
+	"bugs": {
+		"url": "https://github.com/ocamllabs/vscode-ocaml-platform/issues"
+	},
+	"homepage": "https://github.com/ocamllabs/vscode-ocaml-platform",
+	"main": "./dist/vscode_ocaml_platform.js",
+	"engines": {
+		"vscode": "^1.51.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onLanguage:ocaml",
+		"onLanguage:ocaml.interface",
+		"onLanguage:reason",
+		"onLanguage:ocaml.ocamllex",
+		"onLanguage:ocaml.menhir",
+		"onLanguage:dune",
+		"onLanguage:dune-project",
+		"onLanguage:dune-workspace",
+		"onCommand:ocaml.select-sandbox",
+		"onCommand:ocaml.open-terminal",
+		"onCommand:ocaml.open-terminal-select"
+	],
+	"icon": "assets/logo.png",
+	"contributes": {
+		"commands": [
+			{
+				"command": "ocaml.select-sandbox",
+				"category": "OCaml",
+				"title": "Select a Sandbox for this Workspace"
+			},
+			{
+				"command": "ocaml.server.restart",
+				"category": "OCaml",
+				"title": "Restart Language Server"
+			},
+			{
+				"command": "ocaml.open-terminal",
+				"category": "OCaml",
+				"title": "Create Terminal (Current Sandbox)"
+			},
+			{
+				"command": "ocaml.open-terminal-select",
+				"category": "OCaml",
+				"title": "Create Terminal (Select a Sandbox)"
+			},
+			{
+				"command": "ocaml.switch-impl-intf",
+				"category": "OCaml",
+				"title": "Switch implementation/interface",
+				"icon": {
+					"light": "assets/switch-impl-intf.light.svg",
+					"dark": "assets/switch-impl-intf.dark.svg"
+				}
+			}
+		],
+		"keybindings": [
+			{
+				"command": "ocaml.switch-impl-intf",
+				"key": "Alt+O",
+				"when": "editorLangId  == ocaml || editorLangId  == ocaml.interface || editorLangId == reason || editorLangId == ocaml.ocamllex || editorLangId == ocaml.menhir"
+			},
+			{
+				"command": "editor.action.codeAction",
+				"key": "Alt+D",
+				"args": {
+					"kind": "destruct"
+				},
+				"when": "editorLangId  == ocaml || editorLangId == reason"
+			},
+			{
+				"command": "editor.action.codeAction",
+				"key": "Alt+P",
+				"args": {
+					"kind": "inferred_intf"
+				},
+				"when": "editorLangId  == ocaml.interface || editorLangId == reason"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "ocaml.switch-impl-intf",
+					"key": "Alt+O",
+					"when": "editorLangId  == ocaml || editorLangId  == ocaml.interface || editorLangId == reason || editorLangId == ocaml.ocamllex || editorLangId == ocaml.menhir",
+					"group": "navigation"
+				}
+			]
+		},
+		"configuration": {
+			"title": "OCaml configuration",
+			"properties": {
+				"ocaml.sandbox": {
+					"type": "object",
+					"default": null,
+					"description": "Determines where to find the sandbox for a given project"
+				},
+				"ocaml.dune.autoDetect": {
+					"type": "boolean",
+					"default": true,
+					"description": "Controls whether dune tasks should be automatically detected."
+				},
+				"ocaml.trace.server": {
+					"description": "Controls the logging output of the language server. Valid settings are `off`, `messages`, or `verbose`.",
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "off"
+				},
+				"ocaml.terminal.shell.linux": {
+					"description": "The path of the shell that the sandbox terminal uses on Linux",
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null
+				},
+				"ocaml.terminal.shell.osx": {
+					"description": "The path of the shell that the sandbox terminal uses on macOS",
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				"ocaml.terminal.shell.windows": {
+					"description": "The path of the shell that the sandbox terminal uses on Windows",
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null
+				},
+				"ocaml.terminal.shellArgs.linux": {
+					"description": "The command line arguments that the sandbox terminal uses on Linux",
+					"type": [
+						"array",
+						"null"
+					],
+					"items": "string",
+					"default": null
+				},
+				"ocaml.terminal.shellArgs.osx": {
+					"description": "The command line arguments that the sandbox terminal uses on macOS",
+					"type": [
+						"array",
+						"null"
+					],
+					"items": "string",
+					"default": null
+				},
+				"ocaml.terminal.shellArgs.windows": {
+					"description": "The command line arguments that the sandbox terminal uses on Window",
+					"type": [
+						"array",
+						"null"
+					],
+					"items": "string",
+					"default": null
+				}
+			}
+		},
+		"configurationDefaults": {
+			"[ocaml]": {
+				"editor.tabSize": 2,
+				"editor.insertSpaces": true
+			},
+			"[dune]": {
+				"editor.tabSize": 1,
+				"editor.insertSpaces": true
+			},
+			"[dune-project]": {
+				"editor.tabSize": 1,
+				"editor.insertSpaces": true
+			},
+			"[dune-workspace]": {
+				"editor.tabSize": 1,
+				"editor.insertSpaces": true
+			},
+			"[cram]": {
+				"editor.tabSize": 2,
+				"editor.insertSpaces": true
+			}
+		},
+		"problemMatchers": [
+			{
+				"name": "ocamlc",
+				"fileLocation": [
+					"relative",
+					"${workspaceFolder}"
+				],
+				"pattern": [
+					{
+						"regexp": "^\\s*\\bFile\\b\\s*\"(.*)\",\\s*\\blines?\\b\\s*(\\d+)(?:-(\\d+))?(?:,\\s*\\bcharacters\\b\\s*(\\d+)-(\\d+)\\s*)?:\\s*$",
+						"file": 1,
+						"line": 2,
+						"endLine": 3,
+						"column": 4,
+						"endColumn": 5
+					},
+					{
+						"regexp": "^(?:\\s*\\bParse\\b\\s*)?\\s*\\b([Ee]rror|Warning)\\b\\s*(?:(?:\\(\\s*\\bwarning\\b\\s*)?(\\d+)\\)?)?\\s*:\\s*(.*)$",
+						"severity": 1,
+						"code": 2,
+						"message": 3
+					}
+				]
+			}
+		],
+		"taskDefinitions": [
+			{
+				"type": "dune"
+			}
+		],
+		"languages": [
+			{
+				"id": "dune",
+				"aliases": [
+					"dune"
+				],
+				"extensions": [
+					"dune",
+					"jbuild"
+				],
+				"configuration": "./languages/dune.json"
+			},
+			{
+				"id": "dune-project",
+				"aliases": [
+					"dune project"
+				],
+				"extensions": [
+					"dune-project"
+				],
+				"configuration": "./languages/dune.json"
+			},
+			{
+				"id": "dune-workspace",
+				"aliases": [
+					"dune workspace"
+				],
+				"filenames": [
+					"dune-workspace"
+				],
+				"filenamePatterns": [
+					"dune-workspace.*"
+				],
+				"configuration": "./languages/dune.json"
+			},
+			{
+				"id": "ocaml.merlin",
+				"aliases": [
+					"Merlin",
+					"merlin"
+				],
+				"extensions": [
+					".merlin"
+				]
+			},
+			{
+				"id": "ocaml",
+				"aliases": [
+					"OCaml",
+					"ocaml"
+				],
+				"extensions": [
+					".ml",
+					".ocamlinit"
+				],
+				"configuration": "./languages/ocaml.json"
+			},
+			{
+				"id": "ocaml.interface",
+				"aliases": [
+					"OCaml Interface",
+					"ocaml interface"
+				],
+				"extensions": [
+					".mli"
+				],
+				"configuration": "./languages/ocaml.json"
+			},
+			{
+				"id": "ocaml.opam",
+				"aliases": [
+					"opam"
+				],
+				"filenames": [
+					"opam"
+				],
+				"extensions": [
+					".opam",
+					".opam.locked",
+					".opam.template"
+				],
+				"configuration": "./languages/opam.json"
+			},
+			{
+				"id": "ocaml.opam-install",
+				"aliases": [
+					"opam install"
+				],
+				"extensions": [
+					".install"
+				],
+				"configuration": "./languages/opam-install.json"
+			},
+			{
+				"id": "ocaml.META",
+				"aliases": [
+					"META",
+					"meta"
+				],
+				"filenames": [
+					"META"
+				],
+				"filenamePatterns": [
+					"META.*"
+				],
+				"configuration": "./languages/META.json"
+			},
+			{
+				"id": "ocaml.ocamlbuild",
+				"aliases": [
+					"OCamlbuild",
+					"ocamlbuild"
+				],
+				"extensions": [
+					"_tags"
+				],
+				"configuration": "./languages/ocamlbuild.json"
+			},
+			{
+				"id": "ocaml.oasis",
+				"aliases": [
+					"OASIS",
+					"oasis"
+				],
+				"extensions": [
+					"_oasis"
+				],
+				"configuration": "./languages/oasis.json"
+			},
+			{
+				"id": "ocaml.ocamldoc",
+				"aliases": [
+					"OCamldoc",
+					"ocamldoc"
+				],
+				"extensions": [
+					".mld"
+				]
+			},
+			{
+				"id": "ocaml.ocamlformat",
+				"aliases": [
+					"OCamlFormat",
+					"ocamlformat"
+				],
+				"extensions": [
+					".ocamlformat"
+				],
+				"configuration": "./languages/ocamlformat.json"
+			},
+			{
+				"id": "ocaml.ocamllex",
+				"aliases": [
+					"OCamllex",
+					"ocamllex"
+				],
+				"extensions": [
+					".mll"
+				],
+				"configuration": "./languages/ocamllex.json"
+			},
+			{
+				"id": "ocaml.menhir",
+				"aliases": [
+					"Menhir",
+					"menhir",
+					"OCamlyacc",
+					"ocamlyacc"
+				],
+				"extensions": [
+					".mly"
+				],
+				"configuration": "./languages/menhir.json"
+			},
+			{
+				"id": "atd",
+				"aliases": [
+					"ATD",
+					"atd"
+				],
+				"extensions": [
+					".atd"
+				],
+				"configuration": "./languages/ocaml.json"
+			},
+			{
+				"id": "reason",
+				"aliases": [
+					"Reason",
+					"reason"
+				],
+				"extensions": [
+					".re",
+					".rei"
+				],
+				"configuration": "./languages/reason.json"
+			},
+			{
+				"id": "cram",
+				"aliases": [
+					"Cram Test",
+					"Cram",
+					"cram"
+				],
+				"extensions": [
+					".t"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "dune",
+				"scopeName": "source.dune",
+				"path": "./syntaxes/dune.json"
+			},
+			{
+				"language": "dune-project",
+				"scopeName": "source.dune-project",
+				"path": "./syntaxes/dune-project.json"
+			},
+			{
+				"language": "dune-workspace",
+				"scopeName": "source.dune-workspace",
+				"path": "./syntaxes/dune-workspace.json"
+			},
+			{
+				"language": "ocaml.merlin",
+				"scopeName": "source.ocaml.merlin",
+				"path": "./syntaxes/merlin.json"
+			},
+			{
+				"scopeName": "markdown.ocaml.codeblock",
+				"path": "./syntaxes/ocaml-markdown-codeblock.json",
+				"injectTo": [
+					"text.html.markdown"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.ocaml": "ocaml"
+				}
+			},
+			{
+				"language": "ocaml",
+				"scopeName": "source.ocaml",
+				"path": "./syntaxes/ocaml.json"
+			},
+			{
+				"language": "ocaml.interface",
+				"scopeName": "source.ocaml.interface",
+				"path": "./syntaxes/ocaml.interface.json"
+			},
+			{
+				"language": "ocaml.ocamlbuild",
+				"scopeName": "source.ocaml.ocamlbuild",
+				"path": "./syntaxes/ocamlbuild.json"
+			},
+			{
+				"language": "ocaml.ocamldoc",
+				"scopeName": "source.ocaml.ocamldoc",
+				"path": "./syntaxes/ocamldoc.json"
+			},
+			{
+				"language": "ocaml.ocamlformat",
+				"scopeName": "source.ocaml.ocamlformat",
+				"path": "./syntaxes/ocamlformat.json"
+			},
+			{
+				"language": "ocaml.ocamllex",
+				"scopeName": "source.ocaml.ocamllex",
+				"path": "./syntaxes/ocamllex.json"
+			},
+			{
+				"scopeName": "source.action.menhir",
+				"path": "./syntaxes/menhir-action.json",
+				"injectTo": [
+					"source.ocaml"
+				]
+			},
+			{
+				"language": "ocaml.menhir",
+				"scopeName": "source.ocaml.menhir",
+				"path": "./syntaxes/menhir.json",
+				"embeddedLanguages": {
+					"source.embedded-action.menhir": "source.action.menhir"
+				}
+			},
+			{
+				"language": "ocaml.opam",
+				"scopeName": "source.ocaml.opam",
+				"path": "./syntaxes/opam.json"
+			},
+			{
+				"language": "ocaml.opam-install",
+				"scopeName": "source.ocaml.opam-install",
+				"path": "./syntaxes/opam-install.json"
+			},
+			{
+				"language": "ocaml.META",
+				"scopeName": "source.ocaml.META",
+				"path": "./syntaxes/META.json"
+			},
+			{
+				"language": "ocaml.oasis",
+				"scopeName": "source.ocaml.oasis",
+				"path": "./syntaxes/oasis.json"
+			},
+			{
+				"language": "atd",
+				"scopeName": "source.atd",
+				"path": "./syntaxes/atd.json"
+			},
+			{
+				"scopeName": "markdown.reason.codeblock",
+				"path": "./syntaxes/reason-markdown-codeblock.json",
+				"injectTo": [
+					"text.html.markdown"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.reason": "reason"
+				}
+			},
+			{
+				"language": "reason",
+				"scopeName": "source.reason",
+				"path": "./syntaxes/reason.json"
+			},
+			{
+				"language": "cram",
+				"scopeName": "source.cram",
+				"path": "./syntaxes/cram.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "dune",
+				"path": "./snippets/dune.json"
+			},
+			{
+				"language": "dune-project",
+				"path": "./snippets/dune-project.json"
+			},
+			{
+				"language": "ocaml",
+				"path": "./snippets/ocaml.json"
+			},
+			{
+				"language": "ocaml.ocamllex",
+				"path": "./snippets/ocamllex.json"
+			}
+		],
+		"jsonValidation": [
+			{
+				"fileMatch": "esy.json",
+				"url": "https://raw.githubusercontent.com/esy/esy-schema/master/esySchema.json"
+			}
+		]
+	},
+	"scripts": {
+		"test:esy": "node ./test/runEsyTests.js",
+		"test:opam": "node ./test/runOpamTests.js",
+		"test:problems": "node ./test/runProblemMatcherTests.js",
+		"test": "npm-run-all -s test:*",
+		"package": "vsce package --yarn",
+		"deploy:vsce": "vsce publish --yarn",
+		"deploy:ovsx": "ovsx publish --yarn",
+		"fmt:check": "prettier --check .",
+		"fmt": "prettier --write ."
+	},
+	"dependencies": {
+		"vscode-languageclient": "6.1.3"
+	},
+	"devDependencies": {
+		"@types/vscode": "1.51.0",
+		"fs-extra": "9.0.1",
+		"mocha": "7.2.0",
+		"npm-run-all": "4.1.5",
+		"ovsx": "0.1.0-next.980e5cf",
+		"prettier": "2.2.1",
+		"vsce": "1.81.1",
+		"vscode-test": "1.4.1"
+	},
+	"__metadata": {
+		"id": "e3d4a4c9-859a-4367-9080-50dccbd4f1da",
+		"publisherId": "94c690b0-bb73-47d9-bcb4-d2e0ba5801db",
+		"publisherDisplayName": "OCaml Labs"
+	}
+}
