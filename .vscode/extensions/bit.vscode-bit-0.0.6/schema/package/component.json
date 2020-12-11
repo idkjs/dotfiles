@@ -1,7 +1,0 @@
-{
-  "properties": {
-    "bit": {
-      "$ref": "../component.json"
-    }
-  }
-}

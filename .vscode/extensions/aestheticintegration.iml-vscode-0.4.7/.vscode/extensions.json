@@ -1,9 +1,0 @@
-{
-  "recommendations": [
-    "EditorConfig.EditorConfig",
-    "eg2.tslint",
-    "esbenp.prettier-vscode",
-    "gamunu.vscode-yarn",
-    "stkb.rewrap"
-  ]
-}

@@ -1,8 +1,0 @@
-{
-    // If you want completion in YAML-tmLanguage, install
-    // redhat.vscode-yaml and you will get all the fancy autocompletion you
-    // usually only get in json files containing a schema.
-    "yaml.schemas": {
-        "https://cdn.jsdelivr.net/gh/martinring/tmlanguage/tmlanguage.json": "*.YAML-tmLanguage",
-    }
-}
