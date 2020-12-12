@@ -1,0 +1,1 @@
+abbr cdg "cd ~/Github"

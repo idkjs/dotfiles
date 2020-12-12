@@ -1,0 +1,1 @@
+abbr down "cd ~/Downloads"

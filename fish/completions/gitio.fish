@@ -1,2 +1,2 @@
-complete -c gitio --exclusive --long version -d "Print version"
-complete -c gitio --exclusive --long help -d "Print this help message"
+complete -c gitio -x -l help -d "print usage help"
+complete -c gitio -x -l version -d "print gitio version"
