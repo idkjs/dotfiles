@@ -15,10 +15,12 @@ prepend_to_path "/usr/bin"
 prepend_to_path "/usr/sbin"
 prepend_to_path "/usr/local/bin"
 prepend_to_path "/usr/.local/bin"
-prepend_to_path "/usr/local/bin/opam"
-prepend_to_path "/usr/local/bin/fnm"
-prepend_to_path "/usr/local/bin/asdf"
-prepend_to_path "/usr/local/bin/autojump"
+#  should be handled by usr/local/bin above
+# prepend_to_path "/usr/local/bin/opam"
+# prepend_to_path "/usr/local/bin/fnm"
+# prepend_to_path "/usr/local/bin/asdf"
+# prepend_to_path "/usr/local/bin/autojump"
+# prepend_to_path "/usr/local/bin/qnm"
 prepend_to_path /usr/local/opt/asdf/asdf.fish
 # https://github.com/jethrokuan/fzf
 prepend_to_path "$HOME/.fzf/bin"
