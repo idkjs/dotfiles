@@ -1,6 +1,6 @@
 # Completions for ln
 # Author: SanskritFritz (gmail)
-
+# https://github.com/airhorns/hook/blob/master/ln/completions/ln.fish
 complete -c ln -f -s s -l symbolic                   -d 'make symbolic links instead of hard links'
 complete -c ln -f      -l backup=CONTROL             -d 'make a backup of each existing destination file'
 complete -c ln -f -s b                               -d 'like --backup but does not accept an argument'

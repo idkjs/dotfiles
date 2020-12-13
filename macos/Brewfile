@@ -54,10 +54,6 @@ brew "lazygit"
 # https://github.com/mas-cli/mas
 brew "mas"
 
-# https://github.com/dylanaraps/neofetch
-brew "neovim"
-brew "python"
-
 # https://github.com/BurntSushi/ripgrep
 brew "ripgrep"
 
@@ -77,8 +73,11 @@ brew "tldr"
 brew "tmux"
 brew "trash"
 
-
+# https://github.com/dylanaraps/neofetch
+brew "neovim"
+brew "python"
 brew "vim"
+
 brew "watchman"
 
 brew "wifi-password"
@@ -97,6 +96,8 @@ brew "elixir"
 
 # Requires [sk/skim](https://github.com/lotabout/skim) for fco function in `helper_git.fish`
 brew "skim"
+cask "alfred"
+cask "charles"
 
 # Fonts
 tap "homebrew/cask-fonts"
@@ -110,13 +111,15 @@ cask "font-hack"
 cask "font-source-sans-pro"
 cask "font-source-serif-pro"
 cask "font-spectral"
-cask "alfred"
-cask "charles"
+cask "font-fira-code-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-iosevka-nerd-font"
 
 # chrome without the tracking
 cask "chromium"
 cask "discord"
 cask "firefox"
+cask "brave-browser"
 
 # MacOS Automation Tool https://www.hammerspoon.org/
 cask "hammerspoon"
@@ -134,7 +137,4 @@ cask "zoomus"
 
 # https://sizzy.co/ for tailwindscss designing
 # brew install --cask sizzy
-cask "sizzy"
-
-# mas "Xcode", id: 497799835
-# mas "NextDNS", id: 1464122853
+# cask "sizzy"
