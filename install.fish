@@ -34,16 +34,11 @@ ln -nFs $HOME/.dotfiles/fish/config.fish $HOME/.config/fish/config.fish
 ln -nFs $HOME/.dotfiles/fish/functions $HOME/.config/fish/functions
 ln -nFs $HOME/.dotfiles/fish/completions $HOME/.config/fish/completions
 ln -nFs $HOME/.dotfiles/fish/conf.d $HOME/.config/fish/conf.d
-
-function install
-    for file in $symlinks/*
-        set fname basename $file
-        test -f ~/.$fname
-        and echo "Backing up existing ~/.$fname"
-        mv ~/.$fname ~/.$fname.original
-        echo "Sim linking $fname"
-        ln -s $symlinks/$fname ~/.$fname
-        stow -n
-    end
-end
-
+ln -nFs $HOME/.dotfiles/symlinks/.curlrc $HOME/.curlrc
+ln -nFs $HOME/.dotfiles/symlinks/.editorconfig $HOME/.editorconfig
+ln -nFs $HOME/.dotfiles/symlinks/.inputrc $HOME/.inputrc
+ln -nFs $HOME/.dotfiles/symlinks/.vimrc $HOME/.vimrc
+ln -nFs $HOME/.dotfiles/symlinks/.dircolors $HOME/.dircolors
+ln -nFs $HOME/.dotfiles/symlinks/.hushlogin $HOME/.hushlogin
+ln -nFs $HOME/.dotfiles/symlinks/.rigreprc $HOME/.rigreprc
+ln -nFs $HOME/.dotfiles/symlinks/.wgetrc $HOME/.wgetrc

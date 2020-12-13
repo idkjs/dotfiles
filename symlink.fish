@@ -52,40 +52,30 @@
 #         # stow -n
 #     end
 # end
-function isfile
-    set file $argv
-    if test -z $file
-        echo "Specify note file."
-        return
-    else
-        echo file $file
-    end
-end
+# function isfile
+#     set file $argv
+#     if test -z $file
+#         echo "Specify note file."
+#         return
+#     else
+#         echo file $file
+#     end
+# end
+
+# set symlinks (PWD)/symlinks/
+# set links (ls $symlinks)
+
+# echo $links
 # install
 function install
-    for file in (ls (PWD)/symlinks)
-        if test -z (PWD)/symlinks/$file
-            echo "Specify note file."
-            return
-        else
-            echo file (realpath $file)
-        end
-        # set fname basename $file
-        # echo $isFile $file
-        # set cmd ($isFile $HOME)
-        # echo ($cmd)
-        # if test -z $file
-        #     echo "Specify note file."
-        #     return
-        # else
-        #     echo file $file
-        # end
-        # and echo "Backing up existing ~/.$fname"
-        # mv ~/.$fname ~/.$fname.original
-        # echo "Sim linking $fname"
-        # ln -s $symlinks/$fname ~/.$fname
-        # stow -n
-    end
+    ln -nFs $HOME/dotfiles/symlinks/.editorconfig $HOME/.editorconfig
+    ln -nFs $HOME/dotfiles/symlinks/.inputrc $HOME/.inputrc
+    ln -nFs $HOME/dotfiles/symlinks/.vimrc $HOME/.vimrc
+    ln -nFs $HOME/dotfiles/symlinks/.dircolors $HOME/.dircolors
+    ln -nFs $HOME/dotfiles/symlinks/.hushlogin $HOME/.hushlogin
+    ln -nFs $HOME/dotfiles/symlinks/.rigreprc $HOME/.rigreprc
+    ln -nFs $HOME/dotfiles/symlinks/.wgetrc $HOME/.wgetrc
+
 end
 
 install
