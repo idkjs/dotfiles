@@ -95,7 +95,7 @@ brew "mycli" # CLI for MySQL with auto-completion and syntax highlighting
 brew "elixir"
 
 # Requires [sk/skim](https://github.com/lotabout/skim) for fco function in `helper_git.fish`
-brew "skim"
+brew "sk"
 cask "alfred"
 cask "charles"
 
@@ -128,7 +128,8 @@ cask "kitty"
 cask "alacritty" # https://github.com/alacritty/alacritty/ another terminal
 cask "licecap"
 cask "notion"
-cask "postico"
+# for some reason installing via the brewfile is failing for postico but works via terminal
+# cask "postico"
 cask "postman"
 cask "postgres"
 cask "visual-studio-code"

@@ -21,6 +21,9 @@ Install [dag/vim-fish](https://github.com/dag/vim-fish) for fish syntax features
 ## Resources
 
 ### .gitmessage
+[stow-get](https://github.com/rcmdnk/stow-get)
+
+[stow-manager](https://github.com/samba2/stow-manager)
 
 [thoughbot:5-useful-tips-for-a-better-commit-message](https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message)
 
