@@ -9,8 +9,9 @@ SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR --export GITHUB_TOKEN:f9cae3981116bba107775c60a5b0b44dbc1c7fff
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_down:cd\x20\x7e/Downloads
+SETUVAR _fisher_jethrokuan_2F_fzf_files:/Users/mandalarian/\x2econfig/fish/functions/__fzf_cd\x2efish\x1e/Users/mandalarian/\x2econfig/fish/functions/__fzf_complete\x2efish\x1e/Users/mandalarian/\x2econfig/fish/functions/__fzf_complete_preview\x2efish\x1e/Users/mandalarian/\x2econfig/fish/functions/__fzf_find_file\x2efish\x1e/Users/mandalarian/\x2econfig/fish/functions/__fzf_get_dir\x2efish\x1e/Users/mandalarian/\x2econfig/fish/functions/__fzf_open\x2efish\x1e/Users/mandalarian/\x2econfig/fish/functions/__fzf_parse_commandline\x2efish\x1e/Users/mandalarian/\x2econfig/fish/functions/__fzf_reverse_isearch\x2efish\x1e/Users/mandalarian/\x2econfig/fish/functions/__fzfcmd\x2efish\x1e/Users/mandalarian/\x2econfig/fish/conf\x2ed/fzf\x2efish
 SETUVAR _fisher_jorgebucaran_2F_gitio_2E_fish_files:/Users/mandalarian/\x2econfig/fish/functions/gitio\x2efish\x1e/Users/mandalarian/\x2econfig/fish/completions/gitio\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/gitio\x2efish\x1etokozedg/notes
+SETUVAR _fisher_plugins:jorgebucaran/gitio\x2efish\x1etokozedg/notes\x1ejethrokuan/fzf
 SETUVAR _fisher_tokozedg_2F_notes_files:/Users/mandalarian/\x2econfig/fish/functions/nadd\x2efish\x1e/Users/mandalarian/\x2econfig/fish/functions/nedit\x2efish\x1e/Users/mandalarian/\x2econfig/fish/functions/nlist\x2efish
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr

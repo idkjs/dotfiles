@@ -1,3 +1,7 @@
+# dotfiles using stow
+
+Guided by [c-castillo/dotfiles](https://github.com/c-castillo/dotfiles)
+
 ## TLDR
 
 [automatic installation script](https://dm.idkjs.vercel.app/install):
