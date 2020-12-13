@@ -38,3 +38,5 @@ Install [dag/vim-fish](https://github.com/dag/vim-fish) for fish syntax features
 [stow](https://www.gnu.org/software/stow/)
 
 [using-gnu-stow-to-manage-your-dotfiles](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
+
+[SO:how-to-list-files-directories-only-in-fishshell](https://stackoverflow.com/questions/37222484/how-to-list-files-directories-only-in-fishshell)

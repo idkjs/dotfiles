@@ -1,0 +1,50 @@
+# use C-a, since it's on the home row and easier to hit than C-b
+set-option -g prefix C-a
+unbind-key C-a
+
+# C-a for nested tmux sessions
+bind-key C-a send-prefix
+
+# make window/pane index start with 1
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Enable Mouse mode
+set-option -g mouse on
+
+# automatically renumber tmux windows
+set -g renumber-windows on
+
+# tmux 256 color support
+set -g default-terminal "xterm-kitty"
+set -as terminal-overrides ",xterm-kitty:RGB"
+
+# window/pane navigation
+bind-key space next-window
+bind-key bspace previous-window
+bind-key enter next-layout
+
+# use vim-like keys for splits and windows
+bind-key v split-window -h -c "#{pane_current_path}"
+bind-key s split-window -v -c "#{pane_current_path}"
+
+bind-key [ copy-mode
+bind-key ] paste-buffer
+
+# source $HOME/dotfiles/tmux/base16.sh
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-pain-control'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'nhdaly/tmux-better-mouse-mode'
+# https://github.com/tmux-plugins/tmux-resurrect
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-open'
+
+set -g @plugin 'jimeh/tmux-themepack'
+set -g @themepack 'powerline/default/cyan'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run -b '~/.tmux/plugins/tpm/tpm'

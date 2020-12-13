@@ -1,0 +1,34 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Alain Armand
+	email = aarmand.inbox@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
+[core]
+	excludesFile = ~/.gitignore
+  editor = $EDITOR
+  ignorecase = false
+  abbrev = 12
+[alias]
+  l  = log --graph --oneline --decorate
+  sl = log --graph --pretty=format:'%C(yellow)%h%C(bold white red)%d%Creset %s %C(bold green)%cr %Creset%C(white)%an' --abbrev-commit --date=relative
+  ll = log --stat --decorate --source -p
+  ri = rebase --interactive
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+[color]
+	ui = always
+[diff]
+  algorithm = patience
+  colorMoved = zebra
+[commit]
+  template = ~/.gitmessage
+  verbose = true
+[rebase]
+	autosquash = true
+[push]
+	default = current
