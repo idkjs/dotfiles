@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
-set DOTFILES $HOME/dotfiles
-
+set dotfiles $HOME/.dotfiles
+set symlinks $dotfiles/symlinks
 if test ! (which brew)
     /usr/bin/ruby -e "(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 end
@@ -35,37 +35,15 @@ ln -nFs $HOME/.dotfiles/fish/functions $HOME/.config/fish/functions
 ln -nFs $HOME/.dotfiles/fish/completions $HOME/.config/fish/completions
 ln -nFs $HOME/.dotfiles/fish/conf.d $HOME/.config/fish/conf.d
 
-set shell="/usr/local/bin/fish"
-
-# for config in (fd . $DOTFILES/config -d 1 2>/dev/null)
-#     set target "$HOME/.config/( basename "$config" )"
-
-#     if [ -e "$target" ]; then
-#         echo "~$target already exists... Skipping."
-#     else
-#         echo "Creating $config file"
-#         cp -r $config $target
-#     end
-# end
-
-if test ! (grep $shell /etc/shells)
-    sudo bash -c "echo $shell >> /etc/shells"
-end
-
-if not test $SHELL = $shell
-    chsh -s $shell
-end
-if not test $SHELL = $shell
-and echo_err
-or echo $argv
-end
-if not test (grep $shell /etc/shells)
-and echo_err
-or echo $argv
-end
-function testss
-    if not test (grep $shell /etc/shells)
-        sudo bash -c "echo $shell >> /etc/shells"
-        echo_err
+function install
+    for file in $symlinks/*
+        set fname basename $file
+        test -f ~/.$fname
+        and echo "Backing up existing ~/.$fname"
+        mv ~/.$fname ~/.$fname.original
+        echo "Sim linking $fname"
+        ln -s $symlinks/$fname ~/.$fname
+        stow -n
     end
 end
+

@@ -4,6 +4,16 @@ SHELL = /bin/bash
 all: stow
 # Decide whether the commands will be shown or not
 VERBOSE = TRUE
+.PHONY: fishshell
+fishshell:
+	curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+	ln -nFs ~/.dotfiles/fish/aliases.fish ~/.config/fish/aliases.fish
+	ln -nFs ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
+	ln -nFs ~/.dotfiles/fish/fishfile ~/.config/fish/fishfile
+	ln -nFs ~/.dotfiles/fish/functions/* ~/.config/fish/functions/
+	ln -nFs ~/.dotfiles/fish/conf.d ~/.config/fish/conf.d
+	cat ./symlinks.fish | fish
+	fish --command "fisher install"
 
 .PHONY: curl_exists
 curl_exists:
@@ -22,7 +32,7 @@ computer:curl_exists
 
 .PHONY: stow
 stow:
-	@stow -t ~ tmux fish git ripgrep vim nvim iterm wgetrc readline hammerspoon editorconfig curl dircolors hushlogin
+	@stow -t ~ tmux .config git ripgrep vim nvim iterm wgetrc readline hammerspoon editorconfig curl dircolors hushlogin
 
 .PHONY: unstow
 unstow:

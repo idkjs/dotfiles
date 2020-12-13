@@ -31,6 +31,7 @@ Install [dag/vim-fish](https://github.com/dag/vim-fish) for fish syntax features
 
 [thoughbot:autosquashing-git-commits](https://thoughtbot.com/blog/autosquashing-git-commits)
 
+[fish_update_completions generates completions](https://www.2daygeek.com/linux-fish-shell-friendly-interactive-shell/)
 
 ### Backing up dotfiles
 

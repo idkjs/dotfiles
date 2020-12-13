@@ -11,6 +11,8 @@ tap "homebrew/core"
 
 # cat replacement https://github.com/sharkdp/bat
 brew "bat"
+# for dotfile management https://www.gnu.org/software/stow/
+brew "stow"
 
 # https://github.com/AlDanial/cloc
 brew "cloc"

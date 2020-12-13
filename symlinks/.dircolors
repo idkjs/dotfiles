@@ -151,7 +151,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .BAT                  38;5;172
 .sed                  38;5;172
 .sh                   38;5;172
-.zsh                  38;5;172
+.fish                 38;5;172
 .vim                  38;5;172
 
 # interpreted {{{2
