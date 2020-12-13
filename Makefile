@@ -28,7 +28,7 @@ computer:curl_exists
 	# for some reason installing via the brewfile is failing for postico but works via terminal
 	brew install postico
 	cat ./macos/settings.fish | fish
-	stow
+	stow -l
 
 .PHONY: stow
 stow:
