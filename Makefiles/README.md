@@ -17,22 +17,23 @@ git clone https://github.com/idkjs/dotfiles.git ~/.config
 
 Install [dag/vim-fish](https://github.com/dag/vim-fish) for fish syntax features in nvim.
 
-
 ## Resources
+[dotfile-management-with-gnu-stow](https://jonleopard.com/blog/dotfile-management-with-gnu-stow)
 
-### .gitmessage
 [Managing Dotfiles with GNU Stow](https://www.stevenrbaker.com/tech/managing-dotfiles-with-gnu-stow.html)
 
 [stow-get](https://github.com/rcmdnk/stow-get)
 
 [stow-manager](https://github.com/samba2/stow-manager)
 
+### .gitmessage
 [thoughbot:5-useful-tips-for-a-better-commit-message](https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message)
 
 [thoughbot:better-commit-messages-with-a-gitmessage-template](https://thoughtbot.com/blog/better-commit-messages-with-a-gitmessage-template)
 
 [thoughbot:autosquashing-git-commits](https://thoughtbot.com/blog/autosquashing-git-commits)
 
+### fish completions
 [fish_update_completions generates completions](https://www.2daygeek.com/linux-fish-shell-friendly-interactive-shell/)
 
 ### Backing up dotfiles
