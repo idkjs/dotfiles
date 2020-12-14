@@ -1,14 +1,22 @@
 #!/usr/bin/env fish
+
 set symlinks $HOME/dotfiles/symlinks
 
-function symlinks
-    ln -nFs $symlinks/.editorconfig $HOME/.editorconfig
-    ln -nFs $symlinks/.inputrc $HOME/.inputrc
-    ln -nFs $symlinks/.vimrc $HOME/.vimrc
-    ln -nFs $symlinks/.dircolors $HOME/.dircolors
-    ln -nFs $symlinks/.hushlogin $HOME/.hushlogin
-    ln -nFs $symlinks/.rigreprc $HOME/.rigreprc
-    ln -nFs $symlinks/.wgetrc $HOME/.wgetrc
+echo "Creating symlinks for $symlinks"
+function main
+    # Creating symlinks for ./symlinks
+    # must pass the --hidden flag since our symlinks are defined usin .inputrc
+    for config in (fd . $symlinks --hidden -d 1 2>/dev/null)
+
+        set source_file $symlinks/(basename $config)
+        set target $HOME/(basename $config)
+
+        echo "Creating symlink for $source_file at $target"
+
+        ln -nFs $source_file $target
+        and echo Success! $target symlinked
+        or error Symlinking to $config failed
+    end
 end
 
-symlinks
+main

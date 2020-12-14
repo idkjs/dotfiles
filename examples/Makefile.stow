@@ -5,12 +5,8 @@ SHELL = /usr/local/bin/fish
 VERBOSE = TRUE
 
 .PHONY: all
-all: fishshell
+all: stow
 
-.PHONY: macos
-macos:
-    # install mac settings
-	source scripts/macos.fish
 .PHONY: configs
 configs:
     # install .config files
@@ -23,7 +19,8 @@ fishshell:
 
     # install mac symlinks
 	source scripts/symlinks.fish
-
+    # install mac settings
+	source scripts/macos.fish
     # install .config files
 	source scripts/install_config.fish
 
@@ -31,13 +28,21 @@ fishshell:
 curl_exists:
 	@which curl || echo curl not installed;
 
-.PHONY: install
-install:curl_exists
+.PHONY: computer
+computer:curl_exists
 	@which brew || 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 	brew install git
 	# for some reason installing via the brewfile is failing for postico but works via terminal
 	brew install postico
 	cd ./macos && brew bundle --no-upgrade
-	macos
 	fishshell
+
+.PHONY: stow
+stow:
+	@stow -t ~ tmux .config git ripgrep vim nvim iterm wgetrc readline hammerspoon editorconfig curl dircolors hushlogin
+
+.PHONY: unstow
+unstow:
+	@stow -D -t ~ tmux fish git ripgrep vim nvim iterm wgetrc readline hammerspoon editorconfig curl dircolors hushlogin
+
