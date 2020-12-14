@@ -1,0 +1,9 @@
+[submodule "fish"]
+	path = fish
+	url = git@github.com:idkjs/fish.git
+[submodule "config/base16-shell"]
+	path = config/base16-shell
+	url = git@github.com:chriskempson/base16-shell.git
+[submodule "hosts"]
+	path = hosts
+	url = git@github.com:StevenBlack/hosts.git

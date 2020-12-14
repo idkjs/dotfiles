@@ -1,1 +1,0 @@
-abbr ddir 'rm -rf'
