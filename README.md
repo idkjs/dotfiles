@@ -21,6 +21,8 @@ Install [dag/vim-fish](https://github.com/dag/vim-fish) for fish syntax features
 ## Resources
 
 ### .gitmessage
+[Managing Dotfiles with GNU Stow](https://www.stevenrbaker.com/tech/managing-dotfiles-with-gnu-stow.html)
+
 [stow-get](https://github.com/rcmdnk/stow-get)
 
 [stow-manager](https://github.com/samba2/stow-manager)
