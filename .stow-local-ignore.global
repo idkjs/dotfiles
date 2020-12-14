@@ -1,0 +1,5 @@
+Makefile
+.stow-local-ignore
+.stow-local-ignore.global
+README.md
+LICENSE
