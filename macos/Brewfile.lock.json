@@ -5,10 +5,10 @@
         "revision": "5628f2152de4896e0994fe0c3c1d0d7350ddf1ff"
       },
       "homebrew/cask": {
-        "revision": "8130692cc0fe90bb67e0b757a0416b4fc7adfa52"
+        "revision": "a76c80090296b6bd30b00dbdbb289935e9aadba0"
       },
       "homebrew/core": {
-        "revision": "bc93eeea9b022949d6abf7551f10e92564541141"
+        "revision": "7d5d6898dc8cd60e95a2094f3143cda7dc1f3546"
       },
       "homebrew/cask-fonts": {
         "revision": "b1f804a0a622c13cc09b2dbba650636ff90ed71a"
@@ -633,16 +633,16 @@
           "prefix": "/usr/local",
           "files": {
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/youtube-dl-2020.12.12.big_sur.bottle.tar.gz",
-              "sha256": "eee698178433fb54ba51d7da64eab72cfad8d615ce03a2317bb06f15862414ce"
+              "url": "https://homebrew.bintray.com/bottles/youtube-dl-2020.12.14.big_sur.bottle.tar.gz",
+              "sha256": "5f2a2e7aa3c19963af8dc2339dab662a19c8d94f2a83450f18cc78e2ee0cb516"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/youtube-dl-2020.12.12.catalina.bottle.tar.gz",
-              "sha256": "000d6053a8cdbcf8544b3de4355ffca75c878c9a72c56de3b3199fed49d44b21"
+              "url": "https://homebrew.bintray.com/bottles/youtube-dl-2020.12.14.catalina.bottle.tar.gz",
+              "sha256": "ab8a02e2db35d53df6361de57520aa463b55563fe990f0c59e477d1e4e539ec2"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/youtube-dl-2020.12.12.mojave.bottle.tar.gz",
-              "sha256": "66d2b06edd0dcff34719ebe0ec5138087adff0564756f49d54986b2386bb2b81"
+              "url": "https://homebrew.bintray.com/bottles/youtube-dl-2020.12.14.mojave.bottle.tar.gz",
+              "sha256": "55dc22a1db012a2e89fe4e82e3edfebda0693fc31cd1dc3f7891283bd74e678a"
             }
           }
         }
@@ -859,6 +859,35 @@
             }
           }
         }
+      },
+      "stow": {
+        "version": "2.3.1",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/stow-2.3.1.big_sur.bottle.tar.gz",
+              "sha256": "e2a4d5cae000bcb2a5464f618b0c1fb174f4c90f66793411ff3c3bdda0438083"
+            },
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/stow-2.3.1.catalina.bottle.tar.gz",
+              "sha256": "c99a90dc5e3db8ebcb017df044723fb4e6cce7fb94aa24cf46c8d2c0665bf9a0"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/stow-2.3.1.mojave.bottle.tar.gz",
+              "sha256": "409987564f7779d6a1db75f64e54c4713ecd9b9e006abac931f8e8d645bdac92"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/stow-2.3.1.high_sierra.bottle.tar.gz",
+              "sha256": "409987564f7779d6a1db75f64e54c4713ecd9b9e006abac931f8e8d645bdac92"
+            },
+            "sierra": {
+              "url": "https://homebrew.bintray.com/bottles/stow-2.3.1.sierra.bottle.tar.gz",
+              "sha256": "cbc7a61940a343aff46fdb6190dc26a359d26c9c468c05b1dbde2484a066ceb6"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -1049,7 +1078,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "2.6.1",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "bc93eeea9b022949d6abf7551f10e92564541141",
+        "Homebrew/homebrew-core": "7d5d6898dc8cd60e95a2094f3143cda7dc1f3546",
         "CLT": "12.2.0.0.1.1604076827",
         "Xcode": "12.2",
         "macOS": "11.0.1"

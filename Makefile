@@ -1,13 +1,25 @@
 PROJDIR := $(realpath $(CURDIR))
-SHELL = /bin/fish
-.PHONY: all
-all: stow
+
+SHELL = /usr/local/bin/fish
 # Decide whether the commands will be shown or not
 VERBOSE = TRUE
 
+.PHONY: all
+all: stow
+
+.PHONY: fishshell
+fishshell:
+    # install mac fish
+	source scripts/install_fish.fish
+
+    # install mac symlinks
+	source scripts/symlinks.fish
+    # install mac settings
+	source scripts/macos.fish
+
 .PHONY: curl_exists
 curl_exists:
-	@if [ -z `which curl` ]; then echo curl not installed; false; fi
+	@which curl || echo curl not installed;
 
 .PHONY: computer
 computer:curl_exists
@@ -17,16 +29,8 @@ computer:curl_exists
 	cd ./macos && brew bundle --no-upgrade
 	# for some reason installing via the brewfile is failing for postico but works via terminal
 	brew install postico
-    # install mac fish
-	chmod +x ./scripts/install_fish.fish
-    ./scripts/install_fish.fish
-    # install mac symlinks
-	chmod +x ./scripts/symlinks.fish
-	./scripts/symlinks.fish
-    # install mac settings
-	chmod +x ./scripts/macos.fish
-	./scripts/macos.fish
-	stow -l
+
+    fishshell
 
 .PHONY: stow
 stow:
