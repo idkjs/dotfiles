@@ -34,11 +34,11 @@ set -x SHELL fish
 # set -x BROWSER firefox
 fish_vi_key_bindings
 
-set -xU GITHUB_TOKEN (github-access-token)
+set -xU GITHUB_TOKEN github-access-token
 # put github token in $HOME/.github_token so https://github.com/MoOx/npmpub can find it
 echo (github-access-token) > $HOME/.github_token
-
-source ./more.fish
+set DIR (dirname (status --current-filename))
+source $DIR/more.fish
 # AWS settings
 # set -x AWS_IAM_HOME "$HOME/.aws/iam"
 # set -x AWS_CREDENTIALS_FILE "$HOME/.aws/credentials"
