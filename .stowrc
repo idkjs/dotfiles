@@ -1,2 +1,4 @@
 --no-folding
 --verbose=1
+--ignore=Makefile
+--ignore=.DS_Store
