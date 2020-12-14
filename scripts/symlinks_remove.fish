@@ -10,7 +10,7 @@ function main
 
         set source_file $symlinks/(basename $config)
         set target $HOME/(basename $config)
-echo ls -l $target
+        echo ls -l $target
         echo "Removing symlink for $source_file at $target"
 
         rm $target
