@@ -7,7 +7,7 @@ tap "homebrew/core"
 
 # What does this do
 # https://github.com/tomafro/dotfiles/blob/15c83304dbb53c375a80b7092a58837a1a45cc9a/Brewfile#L4
-# cask_args appdir: "/Applications", fontdir: "/Library/Fonts/"
+cask_args appdir: "/Applications", fontdir: "/Library/Fonts/"
 
 # cat replacement https://github.com/sharkdp/bat
 brew "bat"
@@ -44,12 +44,6 @@ brew "heroku/brew/heroku"
 # https://github.com/github/hub
 brew "hub"
 
-# https://github.com/ios-control/ios-deploy
-# brew "ios-deploy"
-
-# https://github.com/jesseduffield/lazydocker
-brew "lazydocker"
-
 # https://github.com/jesseduffield/lazygit
 brew "lazygit"
 
@@ -79,12 +73,13 @@ brew "trash"
 brew "neovim"
 brew "python"
 brew "vim"
-
+# https://github.com/srsudar/eg
+brew "eg-examples"
 brew "watchman"
+# https://frostming.github.io/legit/
+brew "legit"
 
-brew "wifi-password"
-
-brew "youtube-dl"
+brew "jump"
 brew "z"
 brew "fish"
 brew "jq"   # JSON pretty-printer and processor
@@ -98,46 +93,16 @@ brew "elixir"
 
 # Requires [sk/skim](https://github.com/lotabout/skim) for fco function in `helper_git.fish`
 brew "sk"
-cask "alfred"
-cask "charles"
-
-# Fonts
-tap "homebrew/cask-fonts"
-cask "font-iosevka"
-cask "font-cardo"
-cask "font-cormorant"
-cask "font-fira-sans"
-cask "font-fira-code"
-cask "font-fjalla-one"
-cask "font-hack"
-cask "font-source-sans-pro"
-cask "font-source-serif-pro"
-cask "font-spectral"
-cask "font-fira-code-nerd-font"
-cask "font-hack-nerd-font"
-cask "font-iosevka-nerd-font"
 
 # chrome without the tracking
-cask "chromium"
 cask "discord"
-cask "firefox"
 cask "brave-browser"
 
 # MacOS Automation Tool https://www.hammerspoon.org/
 cask "hammerspoon"
-cask "imageoptim"
 cask "kitty"
 cask "alacritty" # https://github.com/alacritty/alacritty/ another terminal
-cask "licecap"
-cask "notion"
 # for some reason installing via the brewfile is failing for postico but works via terminal
 # cask "postico"
-cask "postman"
 cask "postgres"
 cask "visual-studio-code"
-cask "vlc"
-cask "zoomus"
-
-# https://sizzy.co/ for tailwindscss designing
-# brew install --cask sizzy
-# cask "sizzy"
