@@ -3,7 +3,7 @@ set Brewfile (PWD)/Brewfile
 
 echo $Brewfile
 set brewfile bash bash-completion direnv watchman exa envchain thefuck rsync git bat curl broot hivemind overmind stow cloc curl readline wget httpie dockutil exa fzf fd gh git-delta hub lazygit mas ripgrep fnm shellcheck sd ssh-copy-id tldr tmux trash neovim python vim eg-examples watchman legit jump z fish jq tree peco duti ag mycli sk universal-ctags
-set casks firefox-developer-edition appcleaner firefox alacritty react-native-debugger suspicious-package transmission hammerspoon visual-studio-code postgres iterm2 postico "homebrew/services"
+set casks rectangle firefox-developer-edition appcleaner firefox alacritty react-native-debugger suspicious-package transmission hammerspoon visual-studio-code postgres iterm2 postico "homebrew/services"
 
 rm $Brewfile
 
