@@ -12,7 +12,11 @@ curl -fsSL https://dotfiles.idkjs.vercel.app/install | fish
 ```bash
 git clone https://github.com/idkjs/dotfiles.git ~/.config
 ```
+## TMUX
 
+[good tmux instructions](https://www.golinuxcloud.com/tmux-commands/#The_Prefix_key)
+
+[]
 ## TODO
 
 Install [dag/vim-fish](https://github.com/dag/vim-fish) for fish syntax features in nvim.

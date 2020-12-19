@@ -9,7 +9,7 @@ if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
 
-set autoindent 
+set autoindent
 set backspace=indent,eol,start
 set backupdir=~/.tmp
 set complete=.,w,b,u,k,t
@@ -138,7 +138,6 @@ runtime custom/mappings.vim
 " initial 'vim-packager' installation:
 " git clone https://github.com/kristijanhusak/vim-packager ~/.vim/pack/packager/opt/vim-packager
 " plugin setup under ~/.vim/plugin/packager.vim
-
 
 "===========================================================
 " AUTOCMDS

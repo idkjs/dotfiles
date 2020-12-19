@@ -1,4 +1,5 @@
 # use C-a, since it's on the home row and easier to hit than C-b
+unbind C-b
 set-option -g prefix C-a
 unbind-key C-a
 
